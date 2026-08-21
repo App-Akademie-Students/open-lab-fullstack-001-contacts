@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Kontakte</h1>
+
+    <form id="contact-form">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="E-Mail" required>
+        <input type="text" id="phone" placeholder="Telefon" required>
+        <button type="submit">Kontakt anlegen</button>
+    </form>
+
+    <p id="error-message" class="error"></p>
+
+    <section class="contacts" aria-labelledby="contacts-heading">
+        <div class="section-heading">
+            <h2 id="contacts-heading">Meine Kontakte</h2>
+            <span id="contact-count" class="contact-count">0 Kontakte</span>
+        </div>
+        <ul id="contact-list"></ul>
+    </section>
+
+    <script src="app.js?v=2"></script>
+</body>
+</html>

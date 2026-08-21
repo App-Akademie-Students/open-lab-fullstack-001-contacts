@@ -1,0 +1,215 @@
+:root {
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #172033;
+    background: #f4f7fb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem;
+}
+
+h1,
+h2 {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: -0.04em;
+}
+
+#contact-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+    background: white;
+    border: 1px solid #e5eaf2;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgb(31 45 72 / 8%);
+}
+
+input,
+button {
+    min-height: 44px;
+    border-radius: 9px;
+    font: inherit;
+}
+
+input {
+    width: 100%;
+    padding: 0.7rem 0.85rem;
+    color: inherit;
+    background: #fbfcfe;
+    border: 1px solid #ccd5e3;
+}
+
+input:first-child {
+    grid-column: 1 / -1;
+}
+
+input:focus {
+    outline: 3px solid rgb(37 99 235 / 15%);
+    border-color: #2563eb;
+}
+
+#contact-form button {
+    grid-column: 1 / -1;
+    padding: 0.7rem 1rem;
+    color: white;
+    font-weight: 700;
+    background: #2563eb;
+    border: 0;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background: #1d4ed8;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+
+.contact-count {
+    padding: 0.3rem 0.65rem;
+    color: #516078;
+    background: #e8edf5;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+#contact-list {
+    display: grid;
+    gap: 0.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #e5eaf2;
+    border-radius: 14px;
+    box-shadow: 0 5px 18px rgb(31 45 72 / 5%);
+    transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgb(31 45 72 / 10%);
+}
+
+.contact-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    color: #1d4ed8;
+    background: #dbeafe;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.contact-info {
+    min-width: 0;
+}
+
+.contact-name {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.contact-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+}
+
+.contact-details a {
+    overflow: hidden;
+    color: #64748b;
+    font-size: 0.875rem;
+    text-decoration: none;
+    text-overflow: ellipsis;
+}
+
+.contact-details a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.delete-button {
+    min-height: 36px;
+    padding: 0.45rem 0.7rem;
+    color: #b42318;
+    background: #fff;
+    border: 1px solid #f1b4ad;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    background: #fff1f0;
+}
+
+.empty-state {
+    padding: 2.5rem 1rem;
+    color: #64748b;
+    text-align: center;
+    background: white;
+    border: 1px dashed #ccd5e3;
+    border-radius: 14px;
+}
+
+.error {
+    color: #b42318;
+}
+
+@media (max-width: 540px) {
+    body {
+        padding: 2rem 1rem;
+    }
+
+    #contact-form {
+        grid-template-columns: 1fr;
+    }
+
+    input:first-child,
+    #contact-form button {
+        grid-column: auto;
+    }
+
+    .contact-card {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+
+    .delete-button {
+        grid-column: 2;
+        justify-self: start;
+    }
+}
